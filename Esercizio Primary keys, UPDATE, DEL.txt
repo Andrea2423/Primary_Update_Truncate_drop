@@ -1,0 +1,40 @@
+Esercizio Primary keys, UPDATE, DELETE FROM, TRUNCATE, DROP TABLE
+
+Creo la tabella customers
+CREATE TABLE customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255),
+    cognome VARCHAR(255),
+    email VARCHAR(255)
+);
+
+Inserisco alcuni clienti alla tabella
+INSERT INTO customers (nome, cognome, email) VALUES
+    ('Andrea', 'Zora', 'azdevelhope@gmail.com'),
+    ('Mario', 'Rossi', 'mariorossi@gmail.com'),
+    ('Fabio', 'Verdi', 'fabio3@gmail.com');
+
+Qui uso update per aggiornare la tabella sostituendo un customer basandomi sull'id
+UPDATE customers
+SET nome = 'Andrea', cognome = 'Montemagno', email = 'amonte@gmail.com'
+WHERE customer_id = 1;
+
+Elimino il cliente a cui è attribuito l'id 2
+DELETE FROM customers WHERE customer_id=2
+
+Svuoto la tabella, al contrario del DROP che elimina tutto, con TRUNCATE rimane la struttura della table
+TRUNCATE TABLE customers  
+
+Finito l'esercizio la elimino
+DROP TABLE customers
+
+Look at the tables below and write which column(s) you think would make a good primary key.
+
+7. Unica tabella da modificare è la question 7 le altre erano già ben inserite le primary 
+CREATE TABLE Products (
+ parte aggiunta// product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, // cosi definisco una chiave primaria
+                  product_name VARCHAR(255) NOT NULL,
+                  product_description VARCHAR(255) NOT NULL,
+                  product_price DECIMAL(10, 2) NOT NULL,
+                  product_quantity INT NOT NULL
+);
